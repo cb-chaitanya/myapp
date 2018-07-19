@@ -1,0 +1,56 @@
+<apex:page controller="CustomPopupController">
+<style type="text/css">
+    .Background{
+        background-color:black;
+        opacity: 0.4;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        
+    }
+    .Popup{
+        background-color: white;
+        border-width: 2px;
+        border-style: solid;
+        top:60px;
+        padding:10px;
+        position: absolute;
+        
+        float:left;
+        
+    }
+
+</style>
+<apex:form >
+ <apex:pageBlock > 
+
+ 
+ <apex:pageBlockTable value="{!names}" var="n" id="opp_table">
+
+                <apex:column value="{!n}"/>
+
+
+            </apex:pageBlockTable>
+            <apex:commandButton action="{!addCharge}" value="Add Charge" />
+ <apex:commandButton action="{!test1}" value="Test 1" />
+ <apex:commandButton action="{!test2}" value="Test 2" />
+
+ </apex:pageBlock>
+</apex:form>
+ 
+ <apex:outputPanel rendered="{!showPopup}">
+                <apex:outputPanel styleClass="Background" layout="block" />
+                    
+                    <apex:outputPanel styleClass="Popup" layout="block" >
+                    <apex:form >
+                    <apex:commandButton action="{!Cancel}" value="X"/> 
+                    </apex:form>
+                    <apex:include pageName="{!pname}"/>
+                      
+                 </apex:outputPanel>
+ </apex:outputPanel>
+
+
+</apex:page>

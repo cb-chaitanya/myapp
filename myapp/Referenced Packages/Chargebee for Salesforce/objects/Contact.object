@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Auto_collection__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Auto collection</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ChargeBee_Modified_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ChargeBee_Modified_Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB external id</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Method_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Payment Method Status</description>
+        <externalId>false</externalId>
+        <label>Payment Method Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Method_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Payment method type</description>
+        <externalId>false</externalId>
+        <label>Payment Method Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_currency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Preferred currency</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <webLinks>
+        <fullName>Create_Customer_in_Chargebee</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Sync Customer with Chargebee</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/chargebeeapps__CBNewCustomer?id={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Subscription</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Create Subscription</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/chargebeeapps__CBRouter?action=create_subscription&amp;from=con&amp;id={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Update_Payment_Method</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Update Payment Method</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/chargebeeapps__CBRouter?action=update_payment_method&amp;id={!Contact.Id}</url>
+    </webLinks>
+</CustomObject>

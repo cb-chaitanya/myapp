@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Amount</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CB_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Chargebee Invoice id</description>
+        <externalId>true</externalId>
+        <label>CB Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Chargebee_Modified_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Chargebee Modified Time</description>
+        <externalId>false</externalId>
+        <label>Chargebee Modified Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CustomerID__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contact Reference</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>CB Invoices</relationshipLabel>
+        <relationshipName>CB_Invoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DueDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Due Date</description>
+        <externalId>false</externalId>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Due_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice due amount</description>
+        <externalId>false</externalId>
+        <label>Due Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>CB Invoice Id</description>
+        <externalId>true</externalId>
+        <label>Invoice ID</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Next_Retry__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice payment Next Retry</description>
+        <externalId>false</externalId>
+        <label>Next Retry</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PONumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Paid_On__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Paid On</description>
+        <externalId>false</externalId>
+        <label>Paid On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PriceType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice price type</description>
+        <externalId>false</externalId>
+        <label>Price Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TAX_EXCLUSIVE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TAX_INCLUSIVE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>_UNKNOWN</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Recurring__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Invoice Recurring</description>
+        <externalId>false</externalId>
+        <label>Recurring</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Status</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>NOT_PAID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PAID</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PAYMENT_DUE</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PENDING</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>POSTED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VOIDED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>_UNKNOWN</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SubTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice SubTotal</description>
+        <externalId>false</externalId>
+        <label>SubTotal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SubscriptionId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Associated Subscription Id</description>
+        <externalId>false</externalId>
+        <label>CB Subscription</label>
+        <referenceTo>CB_Subscription__c</referenceTo>
+        <relationshipLabel>CB Invoices</relationshipLabel>
+        <relationshipName>CB_Invoices</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Tax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice total tax</description>
+        <externalId>false</externalId>
+        <label>Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>VATNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>VAT Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CB Invoice</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Invoice_Date__c</columns>
+        <columns>SubscriptionId__c</columns>
+        <columns>CustomerID__c</columns>
+        <columns>Amount__c</columns>
+        <columns>Due_Amount__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CB Invoice Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CB Invoices</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <searchResultsAdditionalFields>InvoiceID__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SubscriptionId__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>DueDate__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

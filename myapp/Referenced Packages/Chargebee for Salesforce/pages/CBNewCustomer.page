@@ -1,0 +1,227 @@
+<apex:page controller="chargebeeapps.CBNewCustomer"  id="thepage" docType="html-5.0"> 
+<apex:stylesheet value="{!URLFOR($Resource.chargebeeapps__CB_LAYOUT)}"/> 
+<head>
+<style>
+.tablecls {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.tablecls td {
+    padding: 8px;
+    text-align: left;
+    width:30%;
+}
+
+.tablecls th {
+    padding: 8px;
+    text-align: left;
+    width:20%;
+}
+
+.myclass
+{
+width:200px;
+}
+
+</style>
+
+<script type="application/javascript">
+function enableAllButtons() {
+    var buttons = document.getElementsByClassName("btn");
+    for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    button.disabled = false;
+    button.classList.add("btn");
+}    
+enableAllButtons();            
+</script>
+
+</head>
+    <div class="cb-layout">
+     <apex:sectionHeader title="Contacts" subtitle="Create/Update Customer In Chargebee" /> 
+     <apex:form id="theform">
+     <table cellspacing="8">
+     
+     
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+          Email Address  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >
+          {!cont.Email} 
+          </apex:outputLabel>          
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>
+          
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+          Last Name  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >
+          {!cont.FirstName} 
+          </apex:outputLabel>           
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>          
+          
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+          First Name  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >
+          {!cont.LastName} 
+          </apex:outputLabel>           
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>  
+          
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+          Phone  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >
+          {!cont.Phone} 
+          </apex:outputLabel>          
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>  
+          
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+          Address  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >{!cont.MailingStreet},{!cont.MailingCity},{!cont.MailingState},{!cont.MailingCountry}</apex:outputLabel>
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>  
+          
+          
+          <tr>
+          <apex:outputPanel >
+          <th>
+          <apex:outputLabel >
+           Postal Code  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >{!cont.MailingPostalCode}</apex:outputLabel>
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>  
+          
+          <tr>
+          <apex:outputPanel rendered="{!IF(acct == null,false,true)}">
+          <th>
+          <apex:outputLabel >
+          Company  
+          </apex:outputLabel>
+          </th>
+          <td>
+          <apex:outputLabel >{!acct.name}</apex:outputLabel>
+          </td>
+          </apex:outputPanel>
+          <td style="width:40%"></td></tr>  
+          </table>
+          
+          <table cellspacing="8"> 
+          <tr>
+          <td>
+          <apex:outputPanel rendered="{!if(cont.chargebeeapps__External_Id__c !=null,false,true)}">
+          Customer will be created in Chargebee with the above details.
+          </apex:outputPanel>
+          
+          <apex:outputPanel rendered="{!if(cont.chargebeeapps__External_Id__c !=null,true,false)}">
+          Customer will be updated in Chargebee with the above details.
+          </apex:outputPanel>
+          
+          </td>
+          </tr>
+          </table>
+          
+          <table cellspacing="8">           
+           <tr>
+          <td>
+          <apex:outputPanel >
+              
+
+         <apex:commandButton value="Confirm" onclick="this.disabled=true;this.classList.add('btnDisabled');createCus();" action="!createCustomer" />
+              <apex:actionFunction id="createCus" action="{!createCustomer}" name="createCus" ReRender="res">
+          </apex:actionFunction>
+          
+
+              
+               
+                             
+          </apex:outputPanel>
+          </td>
+          <td>
+          
+           <apex:commandButton action="{!back}" immediate="true" value="Cancel" /> 
+          
+              
+                    
+          </td>
+          <td style="width:60%"></td>
+          </tr>    
+          
+          <apex:outputPanel id="res">
+          <tr>
+          <td>
+          <apex:outputLabel >
+           
+            
+            {!response}
+           
+           </apex:outputLabel>
+          
+             
+          </td>
+          </tr>
+          </apex:outputPanel> 
+                                                            
+      </table>    
+     </apex:form>
+    </div>
+    
+     <script language="Javascript">
+      function DisableAllButtons (actionText) {
+        var buttons = document.getElementsByClassName("btn");
+        for (var i = 0; i < buttons.length; i++) {
+            var button = buttons[i];
+            button.disabled = true;
+            button.classList.add("btnDisabled");
+            if ( actionText != null && actionText != "" ) button.value = actionText;
+        }
+      }
+      function SaveOnClick () {
+        try {
+            DisableAllButtons ('');
+            return false;
+        } catch(err) { }
+        return false;
+      }
+    </script>
+    
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page controller="AddCharge">
+<script>
+            function doValidation(){
+                var amt = document.getElementById('{!$Component.p.pb.pbs.amt}').value;
+                var desc = document.getElementById('{!$Component.p.pb.pbs.desc}').value;
+                if(amt == null || amt == '' || desc == null || desc == '')
+                {
+                    alert('Please fill out all fields!');
+                }
+                else
+                {
+                    fieldUpdateFunction();
+                
+                }
+               
+            }
+</script>
+    <apex:form id="p">
+        <apex:pageBlock id="pb" title="Add Charge">
+            <apex:pageBlockSection id="pbs" columns="1">
+                Amount<apex:inputText value="{!Amount}" id="amt"/>
+
+                Description<apex:inputTextarea value="{!Description}" id="desc" html-placeholder="Add line item description for the invoice."/>
+
+                Invoicing Options:
+
+                <select name="{!opts}">
+                    <option value="ADD_UNBILLED_CHARGE">Add to Unbilled charges</option>
+                    <option value="INVOICE_NOW">Invoice now</option>
+                </select>
+
+                <p>This charge item will be added to <a href="https://www.chargebee.com/docs/unbilled-charges.html">unbilled charges</a>, which can be invoiced later along with other unbilled charges.</p>
+                
+
+            </apex:pageBlockSection>
+                <input type="button" value="submit" onclick="doValidation();" />
+                <apex:actionFunction name="fieldUpdateFunction" action="{!validateOnServer}" rerender="outputtxt"/>
+        </apex:pageBlock>
+    <apex:pageBlock title="Error Info">
+        <apex:outputText value="{!MyString_From_Method}" id="outputtxt"></apex:outputText> 
+    </apex:pageBlock>  
+    </apex:form>
+
+</apex:page>

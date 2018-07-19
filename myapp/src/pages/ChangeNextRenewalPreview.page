@@ -1,0 +1,124 @@
+<apex:page controller="ChangeNextRenewalDate">
+    <style>
+    .ct{
+    text-align:center;
+    }
+    </style>
+   <apex:pageBlock title="Invoice Note Preview" rendered="{!invoiceNote}">
+       <h1>Total:</h1>{!id.total}
+       <apex:variable value="{!0}" var="invoiceIndex"/>
+       <table border="2px" >
+                    <tr>
+            
+                        <th>#</th>
+                        <th>Description</th>
+            
+                       <th>Unit Amount</th>
+                       <th>Quantity</th>
+                       <th>Amount</th>
+            
+                    </tr>
+            
+                    <apex:repeat var="q" value="{!id.cnl}">
+                    <apex:outputText >
+                        <apex:variable value="{!invoiceIndex + 1}" var="invoiceIndex"/>
+                        
+                </apex:outputText>
+                    <tr>
+            
+                        <td>{!invoiceIndex}</td>
+            
+                        <td>{!q.description}</td>
+                        <td>{!q.unitAmount}</td>
+                        <td>{!q.quantity}</td>
+                        <td>{!q.amount}</td>
+                    </tr>
+            
+                    </apex:repeat>
+                </table> 
+       <apex:form >
+    <apex:commandButton action="{!Cancel}" value="Cancel"/>
+    <apex:commandButton action="{!Save}" value="Confirm"/>
+    </apex:form>
+   
+   
+   </apex:pageBlock>
+    
+    
+    
+    
+    <apex:pageBlock title="Credit Notes Preview" rendered="{!creditNote}">
+    <apex:variable value="{!0}" var="index"/>
+        <table border="2px" >
+        <tr>
+
+            <th>#</th>
+            <th>Type</th>
+
+           <th>Total</th>
+           <th>Details</th>
+
+        </tr>
+
+        <apex:repeat var="c" value="{!cd}">
+        <apex:outputText >
+                        <apex:variable value="{!index + 1}" var="index"/>
+                        
+        </apex:outputText>
+        <apex:variable value="{!0}" var="innerIndex"/>
+        <tr>
+
+            <td>{!index}</td>
+
+            <td>{!c.type}</td>
+
+            <td>{!c.total}</td>
+
+            <td>
+                <table border="2px" >
+                    <tr>
+            
+                        <th>#</th>
+                        <th>Description</th>
+            
+                       <th>Unit Amount</th>
+                       <th>Quantity</th>
+                       <th>Amount</th>
+            
+                    </tr>
+            
+                    <apex:repeat var="q" value="{!c.cnl}">
+                    <apex:outputText >
+                        <apex:variable value="{!innerIndex + 1}" var="innerIndex"/>
+                        
+                </apex:outputText>
+                    <tr>
+            
+                        <td>{!innerIndex}</td>
+            
+                        <td>{!q.description}</td>
+                        <td>{!q.unitAmount}</td>
+                        <td>{!q.quantity}</td>
+                        <td>{!q.amount}</td>
+                    </tr>
+            
+                    </apex:repeat>
+                </table>
+            </td>
+            
+        </tr>    
+
+        </apex:repeat>
+
+    </table>
+    
+    <apex:form >
+    <apex:commandButton action="{!Cancel}" value="Cancel"/>
+    <apex:commandButton action="{!Save}" value="Confirm"/>
+    </apex:form>     
+    
+    </apex:pageBlock>
+    
+
+      
+</apex:page>

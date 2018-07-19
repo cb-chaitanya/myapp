@@ -1,0 +1,101 @@
+<apex:page controller="chargebeeapps.ChargeBeeSettingController">
+<style>
+.cb-layout input[type="text"], .cb-layout input[type="mail"], .cb-layout input[type="number"], .cb-layout select {
+    width: 325px;
+    height: 32px;
+    border: 1px solid #BEBEC8;
+    background: #fff;
+    color: #27282e;
+    padding: 0 12px;
+    font-size: 13px;
+    border-radius: 2px;
+}
+.bPageBlock .detailList tr td, 
+.bPageBlock .detailList tr th{
+border-bottom-width:0;
+}
+</style>
+<apex:stylesheet value="{!URLFOR($Resource.chargebeeapps__CB_LAYOUT)}"/>
+    <apex:pageMessages />
+    <div class="cb-layout">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >User Name</apex:outputLabel>
+                    <apex:inputText value="{!setting.username}" size="100" />               
+                </apex:pageBlockSectionItem>
+                
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>
+                 </apex:pageBlockSectionItem>
+                
+                  <apex:pageBlockSectionItem >
+                    <apex:outputLabel >API Key</apex:outputLabel>
+                    <apex:inputText value="{!setting.apikey}" size="100" />               
+                  </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Chargebee Site</apex:outputLabel>
+                    <apex:inputText value="{!setting.chargebeeurl}" size="100" />               
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>                         
+                </apex:pageBlockSectionItem>
+
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Allow Price Override</apex:outputLabel>
+                    <apex:inputText value="{!overRideAllowed}" size="100" />               
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>                         
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Auto Collection</apex:outputLabel>                
+                        <apex:outputPanel styleClass="optionalInput" layout="block" >
+                        <apex:selectList value="{!autoCollection}" multiselect="false" size="1" id="autoCollection" >
+                              <apex:selectOptions value="{!autoCollOptions}" />
+                         </apex:selectlist>                       
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>                         
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Hosted Page Version</apex:outputLabel>                
+                        <apex:outputPanel styleClass="optionalInput" layout="block" >
+                        <apex:selectList value="{!hostedPageVersion}" multiselect="false" size="1" id="hostedPageVersion" >
+                              <apex:selectOptions value="{!hostedPages}" />
+                         </apex:selectlist>                       
+                    </apex:outputpanel>
+                </apex:pageBlockSectionItem>
+                
+                
+                <!--apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>  
+                </apex:pageBlockSectionItem>
+            
+            <apex:pageBlockSectionItem >
+                    <apex:outputLabel >&nbsp;</apex:outputLabel>  
+                    <apex:commandButton action="{!save}" value="Save" id="theButton"/>                        
+            </apex:pageBlockSectionItem-->
+            
+            
+            </apex:pageBlockSection>
+            
+            
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    </div>
+</apex:page>

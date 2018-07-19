@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Addon_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Addon Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Every_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Bill Every Unit</description>
+        <externalId>false</externalId>
+        <label>Bill Every Unit</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_Every__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB Bill Every</description>
+        <externalId>false</externalId>
+        <label>Bill Every</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Cycles__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Billing Cycles</description>
+        <externalId>false</externalId>
+        <label>Billing Cycles</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ChargeBee_Modified_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ChargeBee_Modified_Time</description>
+        <externalId>false</externalId>
+        <label>ChargeBee Modified Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Currency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Free_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Free Quantity</description>
+        <externalId>false</externalId>
+        <label>Free Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice name in Plans and Addons</description>
+        <externalId>false</externalId>
+        <label>Invoice Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB Price</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Product type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product Type as classified in Chargebee</inlineHelpText>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ADDON</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PLAN</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Recurring_charge_model__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB Recurring charge model</description>
+        <externalId>false</externalId>
+        <label>Recurring charge model</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Set_Up_Fee__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Set Up Fee</description>
+        <externalId>false</externalId>
+        <label>Set Up Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB Status</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trial_Period_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Trial Period Unit</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Trial_Period__c</fullName>
+        <deprecated>false</deprecated>
+        <description>CB Trial Period</description>
+        <externalId>false</externalId>
+        <label>Trial Period</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

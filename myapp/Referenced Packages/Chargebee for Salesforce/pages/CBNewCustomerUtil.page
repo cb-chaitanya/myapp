@@ -1,0 +1,16 @@
+<apex:page controller="chargebeeapps.CBNewCustomerUtil" action="{!createcustomer}" tabStyle="chargebeeapps__CB_Subscription__c">
+<apex:stylesheet value="{!URLFOR($Resource.chargebeeapps__CB_CSS)}"/>
+<apex:form > 
+     <apex:pageBlock id="pb1" >  
+     
+          <Apex:pageBlockSection title=""  collapsible="False"/>
+          <br></br><br></br>
+  {!response}
+  <br></br><br></br>
+  
+              <apex:commandButton value="Update Contact" onclick="this.disabled=true;this.classList.add('btnDisabled');createCus();return false;" oncomplete="this.disabled=false;this.classList.add('btn');" action="!back" styleClass="cb-btn"/>
+                  <apex:actionFunction id="createCus" action="{!back}" name="createCus">
+              </apex:actionFunction>  
+  </apex:pageBlock>
+  </apex:form> 
+</apex:page>

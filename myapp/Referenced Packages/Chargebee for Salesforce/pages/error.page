@@ -1,0 +1,7 @@
+<apex:page >
+<apex:stylesheet value="{!URLFOR($Resource.chargebeeapps__CB_CSS)}"/>
+ <div style="padding:165px 10px 20px 365px;" class="cb-layout">
+  <h1>You do not have necessary permissions.</h1>
+  </div>
+  
+</apex:page>
