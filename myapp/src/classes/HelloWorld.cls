@@ -9,5 +9,20 @@ public class HelloWorld
     {
     	System.debug('str-->>'+str);
     }
+    public void add()
+    {
+    	System.debug('addition');
+    
+    }
+    public void sub()
+    {
+    	System.debug('substraction');
+    
+    }
+    public void multiply()
+    {
+    	System.debug('multiplication');
+    
+    }
 
 }
