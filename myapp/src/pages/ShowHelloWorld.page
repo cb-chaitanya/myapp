@@ -1,0 +1,6 @@
+<apex:page controller="HelloWorld">
+  <!-- Begin Default Content REMOVE THIS -->
+  <apex:outputText >{!str}</apex:outputText>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
