@@ -5,5 +5,9 @@ public class HelloWorld
     {
         str = 'Hello World';
     }
+    public void print()
+    {
+    	System.debug('str-->>'+str);
+    }
 
 }
