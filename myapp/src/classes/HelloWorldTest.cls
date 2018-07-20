@@ -6,7 +6,10 @@ public class HelloWorldTest
      {
          HelloWorld ch = new HelloWorld();
          ch.str='world hello';
-         
+         ch.print();
+         ch.add();
+         ch.sub();
+         ch.multiply();
      
      }
 }
