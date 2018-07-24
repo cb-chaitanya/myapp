@@ -33,4 +33,8 @@ public class AddCharge
         System.debug('Amount is '+this.Amount+'.Description is '+this.Description+'.Option is '+this.opts);
     
     }
+    public void print()
+    {
+    	System.debug('hello');
+    }
 }
